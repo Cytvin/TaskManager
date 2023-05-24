@@ -9,7 +9,9 @@ var connectionStrings = builder.Configuration.GetConnectionString("DefaultConnec
 builder.Services.AddDbContext<TaskManagerDBContext>(options =>
     options.UseSqlServer(connectionStrings));
 
+builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -20,5 +22,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/");
 
 app.Run();
