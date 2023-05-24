@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TaskManagerMAUI.ViewModels"
+             x:Class="TaskManagerMAUI.Views.TaskView"
+             x:DataType="viewmodels:TaskViewModel"
+             Title="Задача">
+
+    <VerticalStackLayout>
+        <VerticalStackLayout IsEnabled="{Binding IsViewMode}"
+                             IsVisible="{Binding IsViewMode}"
+                             Padding="10">
+            <StackLayout Spacing="5"
+                         HeightRequest="650">
+                <StackLayout>
+                    <Label Text="Название"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Label Text="{Binding Name}"/>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Label Text="Описание"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Label Text="{Binding Description}"/>
+                </StackLayout>
+            
+                <StackLayout>
+                    <Label Text="Геолокация"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Label Text="{Binding Location}"/>
+                </StackLayout>
+            
+                <StackLayout>
+                    <Label Text="Статус"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Label Text="{Binding Status}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Задача выполнена"
+                    IsVisible="{Binding ShowDoneButton}"
+                    IsEnabled="{Binding ShowDoneButton}"
+                    Command="{Binding Done}"/>
+            
+        </VerticalStackLayout>
+
+        <VerticalStackLayout IsEnabled="{Binding IsCreateMode}"
+                             IsVisible="{Binding IsCreateMode}"
+                             Spacing="5"
+                             Padding="10">
+            <StackLayout Spacing="5"
+                         HeightRequest="650">
+                <StackLayout>
+                    <Label Text="Название"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Entry Text="{Binding Name}"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Описание"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Entry Text="{Binding Description}"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Геолокация"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+
+                    <Entry Text="{Binding Location}"/>
+                </StackLayout>
+            </StackLayout>
+            
+            <Button Text="Создать задачу"
+                    Command="{Binding Create}"/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

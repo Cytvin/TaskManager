@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TaskManagerMAUI.ViewModels"
+             x:Class="TaskManagerMAUI.Views.EnterView"
+             x:DataType="viewmodels:UserViewModel"
+             Title="Вход">
+
+    <VerticalStackLayout Padding="10">
+
+        <Label Text="Введите данные для входа:"
+               FontSize="20"
+               HorizontalOptions="Center"/>
+
+        <VerticalStackLayout VerticalOptions="Center"
+                             Margin="0, 50, 0, 0">
+
+            <Label Text="Логин"/>
+            
+            <Entry Text="{Binding Login}"/>
+            <Label Text="Пароль"/>
+            
+            <Entry IsPassword="True"
+                   Text="{Binding Password}"/>
+
+        </VerticalStackLayout>
+
+        <Button Text="Вход"
+                VerticalOptions="End"
+                Margin="0, 450, 0, 0"
+                Command="{Binding Enter}"/>
+
+    </VerticalStackLayout>
+</ContentPage>

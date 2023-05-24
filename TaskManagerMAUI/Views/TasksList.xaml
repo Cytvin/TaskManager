@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TaskManagerMAUI.ViewModels"
+             xmlns:models="clr-namespace:TaskManagerMAUI.Models"
+             x:Class="TaskManagerMAUI.Views.TasksList"
+             x:DataType="viewmodels:TaskListViewModel"
+             x:Name="_tasksList"
+             Title="Список задач">
+
+    <VerticalStackLayout Spacing="5"
+                         Padding="10">
+        <ScrollView HeightRequest="650">
+            <StackLayout BindableLayout.ItemsSource="{Binding Tasks}"
+                         Spacing="5">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:TaskViewModel">
+                        <Frame BackgroundColor="{Binding BackgroundColor}">
+                            <Label Text="{Binding Name}"
+                                   TextColor="{Binding TextColor}"/>
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference Name=_tasksList}, Path=BindingContext.OpenDetail}"
+                                                      CommandParameter="{Binding}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+                <BindableLayout.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="У вас нет задач"
+                               FontSize="30"
+                               Margin="0, 300, 0, 0"
+                               HorizontalOptions="Center"/>
+                    </DataTemplate>
+                </BindableLayout.EmptyViewTemplate>
+            </StackLayout>
+        </ScrollView>
+
+        <Button Text="Создать задачу"
+                Command="{Binding CreateTask}"
+                VerticalOptions="End"/>
+    </VerticalStackLayout>
+</ContentPage>
