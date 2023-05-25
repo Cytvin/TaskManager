@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagerAPI", "TaskManager\TaskManagerAPI.csproj", "{18FB95A4-2E84-4BB3-A639-EAABC81CD297}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerMAUI", "TaskManagerMAUI\TaskManagerMAUI.csproj", "{7889DBF1-F158-47A9-9A7B-348DD0C98F00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagerMAUI", "TaskManagerMAUI\TaskManagerMAUI.csproj", "{7889DBF1-F158-47A9-9A7B-348DD0C98F00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerWeb", "TaskManagerWeb\TaskManagerWeb.csproj", "{48D1818D-8B76-41F0-82E3-A8777DB9D4BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{7889DBF1-F158-47A9-9A7B-348DD0C98F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7889DBF1-F158-47A9-9A7B-348DD0C98F00}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7889DBF1-F158-47A9-9A7B-348DD0C98F00}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{48D1818D-8B76-41F0-82E3-A8777DB9D4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D1818D-8B76-41F0-82E3-A8777DB9D4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D1818D-8B76-41F0-82E3-A8777DB9D4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D1818D-8B76-41F0-82E3-A8777DB9D4BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
